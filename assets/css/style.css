@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+:root {
+    /* ============= COLORS ============= */
+    --white-97: #fbfaf7;
+    --black-90: #1a1a1a;
+    --black-85: #242424;
+    --black-83: #282828;
+    --black-80: #343434;
+    --gray-95: #747474;
+    --body-bg: var(--black-90);
+    --accordion-bg: var(--black-85);
+    --title-color: var(--white-97);
+    --text-color: var(--gray-95);
+    --btn-hover-color: var(--black-83);
+
+    /* ============= PADDING ============= */
+    --padding-1: 1rem;
+
+    /* ============= BORDER RADIUS ============= */
+    --border-10: 10px;
+
+    /* ============= DURATIONS ============= */
+    --default-duration: 300ms;
+
+    /* ============= FONT FAMILY ============= */
+    --font-family-poppins: "poppins", sans-serif;
+
+    /* ============= FONT SIZE ============= */
+    --font-size-1: 1rem;
+
+    /* ============= FONT WEIGHT ============= */
+    --font-medium: 500;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-poppins);
+}
+
+.material-symbols-rounded {
+    user-select: none;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--body-bg);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: var(--padding-1);
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    background-color: var(--accordion-bg);
+    border: 2px solid var(--black-80);
+    border-radius: var(--border-10);
+    padding: calc(var(--padding-1) / 1.4);
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 55px;
+}
+
+.accordion__title p {
+    font-size: calc(var(--font-size-1) * 1.2);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+}
+
+.accordion__btn-tgl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--black-80);
+    outline: none;
+    border-radius: var(--border-10);
+    background-color: transparent;
+    color: var(--white-97);
+    transition: all var(--default-duration) ease;
+    cursor: pointer;
+}
+
+.accordion__btn-tgl:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.accordion__content {
+    overflow: hidden;
+    color: var(--text-color);
+    transition: height var(--default-duration) ease;
+}
+
+.accordion.collapsed .accordion__content {
+    height: 0;
+}

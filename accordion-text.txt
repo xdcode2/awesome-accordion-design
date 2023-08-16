@@ -1,0 +1,9 @@
+.accordio__title
+    "What is an accordion?"
+
+.accordio__title
+    "How can I create an accrodion?"
+
+.accordio__title
+    "When to use an accordion?"
+
